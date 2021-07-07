@@ -1,0 +1,69 @@
+{% extends "base2.html" %}
+{% block content %}
+<script>
+ function cal()
+    {
+		
+        var price, qty, total, discount;
+        price = parseFloat(document.form10.price.value);
+		qty = parseFloat(document.form10.qty.value);
+	    total = price * qty;
+		
+		if (total < 50)
+		discount = 0.02 * total;
+		
+		else if (total >= 51 && total <= 100) 
+		discount = 0.05 * total;
+		
+		else if (total >= 101 && total <= 500) 
+		discount = 0.07 * total;
+		
+		else (total >= 501) 
+		discount = 0.1 * total;
+	
+		
+		
+		net = total - discount;       
+        document.form10.total.value = total;
+		document.form10.discount.value = discount;
+         
+    }
+</script>
+
+  <form name="form10" action='/update' method='post' >
+    {% if stat=="1": %}
+    Order_Id:<br>
+    <input type="text" name="Order_Id" id ="Order_Id" value="{{row[0]}}" readonly><br>
+    {% else: %}
+    <input type="text" name="Order_Id" value="{{row[0]}}"><br>
+    {% endif %}
+    Cust_Id: <br>
+    <input type="text" name="Cust_Id" value="{{row[1]}}"><br>
+    Product_Id: <br>
+    <input type="text" name="Product_Id" value="{{row[2]}}"><br>  
+    Order_Quantity: <br>
+    <input type="number" name="qty"    value="{{row[3]}}" ><br>
+    Order_Price: <br>
+    <input type="numeric" name="price"    value="{{row[4]}}" ><br>
+    Order_Discount: <br>
+    <input type="text" name="discount" value="{{row[5]}}" ><br>
+    
+     <td colspan = "2" align = "center"><input type = "button" onclick = "cal()" value = "calculate" /></td><br><br>
+    
+    
+     Order_Date: <br>
+    <input type="date" name="date" value="{{row[6]}}" ><br>
+     Order_Total: <br>
+    <input type="text" name="total" value="{{row[7]}}" ><br>
+    
+    
+    <input type="hidden" name="status" value="{{status}}"> 
+    <br>
+    <div style="margin: 10px 0; color: red;">
+        <span>{{ message }} </span>
+    </div>
+   <p><input type=submit value=Submit></p>
+</form>
+
+  
+ {% endblock %}

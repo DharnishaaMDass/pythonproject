@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" media="screen" href = "https://bootswatch.com/4/journal/bootstrap.min.css">
+<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<head>
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+
+}
+li a {
+  display: block;
+  color: #000;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #cf6f6b;
+  color: white;
+}
+</style>
+</head>
+<body>
+<ul >
+<strong><li><a> Order Delivery System</a></li></strong>
+ <li><a href="/list_customer">Customers</a></li>
+      <li><a href="/list_orders">Orders</a></li>
+      <li><a href="/list_products">Products</a></li>
+       <li><a href="/list_deliverys">Delivery</a></li>
+       <li><a href="/new">New</a></li>
+       
+       <ul><li><a href="/logout">Logout</a></li></ul>
+</ul>
+
+
+<style>
+.pagination {
+  display: flex;
+  justify-content: center; 
+  
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-top: 100px;
+  
+}
+</style>
+
+<body>
+
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="/list_customer">1</a>
+  <a href="/list_orders">2</a>
+  <a href="/list_products">3</a>
+  <a href="/list_deliverys">4</a>
+   <a href="/new">5</a>
+  <a href="#">&raquo;</a>
+</div>
+
+
+
+<div class="container">
+<div style="margin-left:7%;padding:1%;height:1000px;">
+  {%block content%}
+  {%endblock%}
+</div>
+
+</body>
+</html>
+
+
+

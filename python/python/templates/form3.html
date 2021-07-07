@@ -1,0 +1,18 @@
+{% extends "base2.html" %}
+
+{% block content %}
+{%if row==None: %}
+  Order is not in the list!
+{% else %}
+  <form >
+    Order_ID:<br>
+    <input type="text" name="order_id" value={{row[0]}} readonly><br><br><br>
+    Order_Date: <br>
+    <input type="text" name="order_date" size=30 value={{row[1]}} readonly><br>
+       
+       
+   </form>
+
+{% endif %}
+
+{% endblock %}

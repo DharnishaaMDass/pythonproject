@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MMS3013</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="css/sb-admin-2.css" rel="stylesheet" />
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background: url("https://imgur.com/JFsgarS.jpg");
+			background-size: cover;
+		}
+		
+		.thing{
+			position: relative;
+			top: 280px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 350px;
+			height: 500px;
+			padding: 20px 40px;
+			box-sizing: border-box;
+			background: rgba(0,0,0,0.5);
+		}
+	
+		.thing h2, h3{
+			text-align: center;
+			color: white;
+			font-family: 'Roboto', sans-serif;
+		}
+		.thing input[type=text], input[type=Cust_Password], input[type=Cust_Id]{
+		  width: 100%;
+		  padding: 15px;
+		  margin: 5px 0 22px 0;
+		  display: inline-block;
+		  border: none;
+		  background: #f1f1f1;
+		}
+		button{
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button:hover
+		{
+			opacity: 0.8;
+		}
+		.message{
+			color:red;
+			margin-top:3px;
+			text-align: center;
+			background-color: white;
+		}	
+	</style>
+    </head>
+<body>
+	<div class="thing">
+	<form action="/login" method="POST">
+	<h3>Order DeliverY System </h3>
+	<h2>LOG IN HERE</h2>
+	<hr>
+    	<input type="Cust_Id" placeholder="Enter Cust_Id" name="Cust_Id" id="Cust_Id" required>
+    	<input type="Cust_Password" placeholder="Enter Password" name="Cust_Password" id="Cust_Password" required>
+    	<label class="login-field-icon fui-lock" for="login-pass"></label>
+		<div class="message"></div>
+	<hr>
+	
+	 <input type="submit" value="Log In" class="button" >
+	 
+	</form>
+	</div>
+
+</body>
+</html>
+
+
